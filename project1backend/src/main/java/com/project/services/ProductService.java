@@ -10,5 +10,5 @@ public interface ProductService {
 	void deleteProduct(int id);
 	void saveProduct(Product product);
 	void updateProduct(Product product);
-	List<Category> getAllCategories();
+	List<Category> getAllCategories();	
 }
