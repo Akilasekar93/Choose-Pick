@@ -1,20 +1,23 @@
 package com.project.model;
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 @Entity
+@Table(name="authorities_s180396")
 public class Authorities {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int id;
 private String role;
 @OneToOne
-private User user;//FK user_email Referential Integrity Constraint
-public Authorities(){
-	System.out.println("Authorities object is created");
-}
+@JoinColumn(name="username",unique=true)
+private User user;
 public int getId() {
 	return id;
 }

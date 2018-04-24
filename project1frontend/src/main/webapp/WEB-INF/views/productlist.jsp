@@ -6,7 +6,11 @@
 <%@ include file="header.jsp" %> 
 <html>
 <head>
-
+<style>
+body {
+background-color:#474747;
+}
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script>
 	$(document).ready(function() {
@@ -19,6 +23,10 @@
 		})
 	});
 </script>
+<div class="jumbotron text-center">
+<h3>Choose and Pick !!!!!</h3>
+The One Exclusive Online Store For All You Need.....!!
+</div>
 <title>Insert title here</title>
 <link rel="stylesheet" href='<c:url value="/resources/css/table.css"></c:url>' >
 </head>
@@ -32,7 +40,7 @@ p = 1 1000.0 Product Description for toy car Toy Car 12
  -->
 	<div class="container">
 		<b>List of Products</b>
-		<table class="table table-hover" border="2">
+		<table class="table table-hover table-dark" border="2">
 			<thead id="thead">
 				<tr>
 				    <th>Image</th>

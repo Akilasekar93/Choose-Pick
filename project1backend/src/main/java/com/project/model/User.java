@@ -1,9 +1,13 @@
 package com.project.model;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 @Entity
+@Table(name="user_s180396")
 public class User {
 	@Id
 	private String email;
@@ -45,6 +49,10 @@ public class User {
 	}
 	public void setAuthorities(Authorities authorities) {
 		this.authorities = authorities;
+	}
+	public List<CartItem> getCartItems() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	}

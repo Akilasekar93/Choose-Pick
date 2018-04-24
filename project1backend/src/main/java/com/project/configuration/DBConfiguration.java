@@ -2,10 +2,19 @@ package com.project.configuration;
 
 import org.springframework.context.annotation.Configuration;
 
+
+
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.project.model.Authorities;
+import com.project.model.BillingAddress;
+import com.project.model.Cart;
+import com.project.model.CartItem;
 import com.project.model.Category;
+import com.project.model.Customer;
 import com.project.model.Product;
+import com.project.model.ShippingAddress;
+import com.project.model.User;
 
 import java.util.Properties;
 
@@ -33,7 +42,7 @@ public class DBConfiguration {
 		    System.out.println("DataSource bean " +dataSource);
 		    return dataSource;
 		}
-		/*
+		/* 
 		 * <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBuilder">
 		 * <property name="dataSource" ref="dataSource">
 		 */
@@ -50,7 +59,7 @@ public class DBConfiguration {
 			lsf.addProperties(hibernateProperties);
 			//An array of Class objects of all the entities
 			//Map all entities to relational table
-			Class classes[]=new Class[]{Product.class, Category.class };
+			Class classes[]=new Class[]{Product.class, Category.class, User.class, ShippingAddress.class, Customer.class, CartItem.class, Cart.class, BillingAddress.class, Authorities.class};
 			//localsesionfactorybuilder -> sessionfactory -> map all entities with relation table
 			System.out.println("Entering sessionFactory creation method");
 		    return lsf.addAnnotatedClasses(classes).buildSessionFactory();

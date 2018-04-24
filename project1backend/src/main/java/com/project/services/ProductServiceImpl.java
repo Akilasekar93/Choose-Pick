@@ -1,4 +1,5 @@
 package com.project.services;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.project.dao.ProductDao;
 import com.project.model.Category;
 import com.project.model.Product;
+
 @Service
 public class ProductServiceImpl implements ProductService { 
 	@Autowired

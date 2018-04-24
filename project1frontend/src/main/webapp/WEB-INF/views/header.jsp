@@ -3,6 +3,7 @@
     <%@page isELIgnored="false" %>
      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
      <%@ taglib uri= "http://www.springframework.org/tags/form" prefix="form" %>
+      <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -39,7 +40,7 @@
 			/WEB-INF/resources/images/niit.jpg
 			url - http://localhost:8080/project1frontend/resources/images/niit.jpg
 			 -->
-				<a class="navbar-brand" href=""><img src='<c:url value="/resources/images/logo1.png"></c:url>' alt="Choose&Pick" height="30px" width="100px"></a>
+				<a class="navbar-brand" href=""><img src='<c:url value="/resources/images/logoedited.jpg"></c:url>' alt="Choose&Pick" height="30px" width="80px"></a>
 			</div>
 			<div class="collapse navbar-collapse" id="collapse-example">
 			<ul class="nav navbar-nav" id="links">	
@@ -53,8 +54,20 @@
 				/WEB-INF/views/productlist.jsp
 				 -->
 				<li><a href='<c:url value="/all/getproducts"></c:url>'>Browse All Products</a></li>
+				<li><a href='<c:url value="/all/getproducts"></c:url>'>Browse All Products</a></li>
+				 <security:authorize access="hasRole('ROLE_ADMIN')">
 				<li><a href='<c:url value="/admin/getproductform"></c:url>'>Add Product</a></li>
-				<li class="dropdown">
+				</security:authorize>
+...........
+			<c:if test="${pageContext.request.userPrincipal.name==null }">
+			<li><a href='<c:url value="/all/registrationform"></c:url>'>Sign Up</a></li>
+			<li><a href='<c:url value="/login"></c:url>'>Sign In</a></li>
+			</c:if>
+			
+			<c:if test="${pageContext.request.userPrincipal.name!=null }">
+			<li><a href='<c:url value="/j_spring_security_logout"></c:url>'>logout</a></li>
+			</c:if>
+			</ul> 				<li class="dropdown">
 			<a href="" class="dropdown-toggle" data-toggle="dropdown">
                      Select by Category<b class="caret"></b></a>
 			<ul class="dropdown-menu">
@@ -64,7 +77,8 @@
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=Gold accessories"></c:url>'>Gold accessories</a>
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=Clothings"></c:url>'>Clothings</a>
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=Footwear"></c:url>'>Footwear</a>
-						   <a href='<c:url value="/all/searchbycategory?searchCondition=All"></c:url>'>All</a>
+						   <a href='<c:url value="/all/searchbycategory?searchCondition=All"></c:url>'>All</a>	   
+						
                     </li>
 			</ul>
 			</li>
