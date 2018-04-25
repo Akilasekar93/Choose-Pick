@@ -54,12 +54,10 @@
 				/WEB-INF/views/productlist.jsp
 				 -->
 				<li><a href='<c:url value="/all/getproducts"></c:url>'>Browse All Products</a></li>
-				<li><a href='<c:url value="/all/getproducts"></c:url>'>Browse All Products</a></li>
 				 <security:authorize access="hasRole('ROLE_ADMIN')">
 				<li><a href='<c:url value="/admin/getproductform"></c:url>'>Add Product</a></li>
 				</security:authorize>
-...........
-			<c:if test="${pageContext.request.userPrincipal.name==null }">
+              <c:if test="${pageContext.request.userPrincipal.name==null }">
 			<li><a href='<c:url value="/all/registrationform"></c:url>'>Sign Up</a></li>
 			<li><a href='<c:url value="/login"></c:url>'>Sign In</a></li>
 			</c:if>
@@ -67,18 +65,21 @@
 			<c:if test="${pageContext.request.userPrincipal.name!=null }">
 			<li><a href='<c:url value="/j_spring_security_logout"></c:url>'>logout</a></li>
 			</c:if>
-			</ul> 				<li class="dropdown">
-			<a href="" class="dropdown-toggle" data-toggle="dropdown">
-                     Select by Category<b class="caret"></b></a>
+			</ul> 				
+			<li class="dropdown">
+			<a href="" class="dropdown-toggle" data-toggle="dropdown">Select by Category<b class="caret"></b></a>
 			<ul class="dropdown-menu">
 					<li >
 					<!-- Request parameter
 					parameter name is 'searchCondition' -->
-					   <a href='<c:url value="/all/searchbycategory?searchCondition=Gold accessories"></c:url>'>Gold accessories</a>
+					   <a href='<c:url value="/all/searchbycategory?searchCondition=Jewelries"></c:url>'>Jewelries</a>
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=Clothings"></c:url>'>Clothings</a>
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=Footwear"></c:url>'>Footwear</a>
-						   <a href='<c:url value="/all/searchbycategory?searchCondition=All"></c:url>'>All</a>	   
-						
+					   <a href='<c:url value="/all/searchbycategory?searchCondition=Bags"></c:url>'>Bags</a>
+					   <a href='<c:url value="/all/searchbycategory?searchCondition=Hair Accessories"></c:url>'>Hair Accessories</a>
+					   <a href='<c:url value="/all/searchbycategory?searchCondition=Makeup Products"></c:url>'>Makeup Products</a>
+					   <a href='<c:url value="/all/searchbycategory?searchCondition=Sunglasses"></c:url>'>Sunglasses</a>
+					   <a href='<c:url value="/all/searchbycategory?searchCondition=All"></c:url>'>All</a>	  
                     </li>
 			</ul>
 			</li>

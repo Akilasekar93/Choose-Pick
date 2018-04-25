@@ -5,11 +5,46 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style>
+body {
+background-color:#32A1A0;
+}
+* {
+    box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 700px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 65%;
+}
+
+.right {
+  width: 35%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
 <title>Insert title here</title>
-<link href='<c:url value="/resources/css/login.css"></c:url>' rel="stylesheet">
+<link rel="stylesheet" href='<c:url value="/resources/css/login.css"></c:url>' >
 </head>
 <body>
-	<h3 align="center">Login Page</h3>
+   	<h3 align="center">To Pick your favorites products Login below... </h3>
+	<div class="row">
+  <div class="column left" style="background-color:#aaa;">
+  <img src='<c:url value="/resources/images/login.jpg"></c:url>' style="width:100%">
+	</div>
+	<div class="column right" style="background-color:#32A1A0;">
 	<div id="login-box">
 	
 	<c:if test="${error!=null }">
@@ -38,5 +73,7 @@
 		</table>
 	</form>
 	</div>
+	 </div>
+</div>
 </body>
 </html>

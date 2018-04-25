@@ -8,7 +8,7 @@
 <head>
 <style>
 body {
-background-color:#474747;
+background-color:#32A1A0;
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -23,10 +23,10 @@ background-color:#474747;
 		})
 	});
 </script>
-<div class="jumbotron text-center">
-<h3>Choose and Pick !!!!!</h3>
-The One Exclusive Online Store For All You Need.....!!
-</div>
+
+<h3  align="center">Choose and Pick !!!!!</h3>
+<h3  align="center">The One Exclusive Online Store For All You Need.....!!</h3>
+
 <title>Insert title here</title>
 <link rel="stylesheet" href='<c:url value="/resources/css/table.css"></c:url>' >
 </head>

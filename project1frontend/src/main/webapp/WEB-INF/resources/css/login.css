@@ -4,8 +4,8 @@
 	margin-bottom: 20px;
 	border: 1px solid transparent;
 	border-radius: 4px;
-	color: #a94442;
-	background-color: #f2dede;
+	color: #ff0000;
+	background-color: #42bcf4;
 	border-color: #ebccd1;
 }
 .msg {
@@ -13,16 +13,17 @@
 	margin-bottom: 20px;
 	border: 1px solid transparent;
 	border-radius: 4px;
-	color: #31708f;
-	background-color: #d9edf7;
-	border-color: #bce8f1;
+	color: #804040;
+	background-color: #804040;
+	border-color: #ff0080;
 }
 #login-box {
 	width: 300px;
 	padding: 20px;
 	margin: 100px auto;
-	background: #fff;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border: 1px solid #000;
+	background: #408080;
+	color: #000000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 1px solid #000000;
 } 
