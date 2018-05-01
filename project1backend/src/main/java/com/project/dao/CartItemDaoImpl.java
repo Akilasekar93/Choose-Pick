@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.project.model.CartItem;
 import com.project.model.User;
+
 @Repository
 @Transactional
 public class CartItemDaoImpl implements CartItemDao{
@@ -32,12 +33,14 @@ public class CartItemDaoImpl implements CartItemDao{
 		public User getUser(String email) {
 			Session session=sessionFactory.getCurrentSession();
 			User user=(User)session.get(User.class,email);
-			List<CartItem> cartItems=user.getCartItems();
+			//List<CartItem> cartItems=user.getCartItems();
 			return user;
 		}
 
-		
-//		CustomerOrder createOrder(User user){
-//			
-//		}
-}
+		//public CustomerOrder createOrder(User user) {
+		//	return null;
+		//}
+
+			
+		}
+

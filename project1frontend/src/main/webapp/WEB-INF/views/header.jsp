@@ -54,9 +54,14 @@
 				/WEB-INF/views/productlist.jsp
 				 -->
 				<li><a href='<c:url value="/all/getproducts"></c:url>'>Browse All Products</a></li>
-				 <security:authorize access="hasRole('ROLE_ADMIN')">
+			<security:authorize access="hasRole('ROLE_ADMIN')">
 				<li><a href='<c:url value="/admin/getproductform"></c:url>'>Add Product</a></li>
-				</security:authorize>
+		       </security:authorize>
+		       
+		       <security:authorize access="hasRole('ROLE_USER')">
+			<li><a href="<c:url value='/cart/getcart'></c:url>">Cart</a></li>
+			</security:authorize>
+			
               <c:if test="${pageContext.request.userPrincipal.name==null }">
 			<li><a href='<c:url value="/all/registrationform"></c:url>'>Sign Up</a></li>
 			<li><a href='<c:url value="/login"></c:url>'>Sign In</a></li>
@@ -69,7 +74,7 @@
 			<li class="dropdown">
 			<a href="" class="dropdown-toggle" data-toggle="dropdown">Select by Category<b class="caret"></b></a>
 			<ul class="dropdown-menu">
-					<li >
+					<li>
 					<!-- Request parameter
 					parameter name is 'searchCondition' -->
 					   <a href='<c:url value="/all/searchbycategory?searchCondition=Jewelries"></c:url>'>Jewelries</a>

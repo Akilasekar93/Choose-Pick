@@ -36,8 +36,8 @@
  
  <security:jdbc-user-service 
  data-source-ref="dataSource"
- authorities-by-username-query="SELECT username,role FROM authorities_s180396 where username=?"
- users-by-username-query="SELECT username,password,enabled FROM user_s180396 where username=?"
+ users-by-username-query="select email,password,enabled from user_s180396 where email=?"
+ authorities-by-username-query="select username,role from authorities_s180396 where user_email=?"
   />
  </security:authentication-provider>
  

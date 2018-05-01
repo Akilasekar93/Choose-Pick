@@ -1,11 +1,10 @@
 package com.project.controllers;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.project.dao.ProductDao;
 import com.project.model.Customer;
 import com.project.services.CustomerService;
 

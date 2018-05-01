@@ -1,6 +1,7 @@
 package com.project.model;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,9 +18,11 @@ public class CartItem {
 	private double totalPrice;
 	
 	@ManyToOne
-	private Cart cart;
+	private User user;
 	@ManyToOne
 	private Product product;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -38,14 +41,14 @@ public class CartItem {
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	public Cart getCart() {
-		return cart;
-	}
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
 	public Product getProduct() {
 		return product;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public void setProduct(Product product) {
 		this.product = product;

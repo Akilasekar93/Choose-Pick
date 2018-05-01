@@ -19,7 +19,7 @@
             </ol>
              <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="first-slide home-image" src='<c:url value="/resources/images/04.jpg"></c:url>' alt="first slide" height="55%" width="100%">
+                    <img class="first-slide home-image" src='<c:url value="/resources/images/03.jpg"></c:url>' alt="first slide" height="55%" width="100%">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Happy Shopping</h1>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="third-slide home-image " src='<c:url value="/resources/images/03.jpg"></c:url>' alt="Third slide" height="60%" width="100%">
+                    <img class="third-slide home-image " src='<c:url value="/resources/images/04.jpg"></c:url>' alt="Third slide" height="60%" width="100%">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Is Shopping Is This Easy??</h1>

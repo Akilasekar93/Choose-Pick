@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 import javassist.expr.Cast;
 @Entity
-@Table(name="category_s180396")
+@Table(name="customer_s180396")
 public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

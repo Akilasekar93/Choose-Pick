@@ -1,10 +1,10 @@
 package com.project.model;
 import javax.persistence.Entity;
 
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,7 +16,7 @@ public class Authorities {
 private int id;
 private String role;
 @OneToOne
-@JoinColumn(name="username",unique=true)
+//@JoinColumn(name="username",unique=true)
 private User user;
 public int getId() {
 	return id;

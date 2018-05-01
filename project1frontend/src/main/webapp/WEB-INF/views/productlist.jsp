@@ -66,16 +66,25 @@ p = 1 1000.0 Product Description for toy car Toy Car 12
 					-->
 						<!--  when glyphicon info sign is clicked, request
 					 will be handled by the RequestMapping value 'all/getproduct/1 -->
-						<td><a
-							href='<c:url value="/all/getproduct/${p.id }"></c:url>'> <span
+						<td>
+						<a href='<c:url value="/all/getproduct/${p.id }"></c:url>'> <span
 								class="glyphicon glyphicon-info-sign"></span>
-
-						</a> <a href='<c:url value="/admin/deleteproduct/${p.id }"></c:url>'><span
-								class="glyphicon glyphicon-trash"></span></a>
+						</a>	
+						<security:authorize access="hasRole('ROLE_USER')">
+						<a href='<c:url value="/cart/addtocart/${p.id}?requestedQuantity=1"></c:url>'>
+ 					             <button type="submit" value='Add To Cart' class="btn btn-link">
+								<span class="glyphicon glyphicon-shopping-cart"></span>
+								</button>
+								</security:authorize>
+						</a> 
 								
+                    <security:authorize access="hasRole('ROLE_ADMIN')">			
+						
+						<a href='<c:url value="/admin/deleteproduct/${p.id }"></c:url>'><span
+								class="glyphicon glyphicon-trash"></span></a>								
 						<a href='<c:url value="/admin/updateproductform/${p.id }"></c:url>'><span class="glyphicon glyphicon-pencil"></span></a>		
 						</td>
-								
+		                 	</security:authorize>					
 						
 					</tr>
 				</c:forEach>

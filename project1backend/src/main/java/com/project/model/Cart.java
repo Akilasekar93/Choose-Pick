@@ -20,8 +20,10 @@ private int id;
 private double grandTotal;
 @OneToOne
 private Customer customer;//FK customer_id
-@OneToMany(mappedBy="cart",fetch=FetchType.EAGER)
-private List<CartItem> cartItems;
+
+//@OneToMany(mappedBy="cart",fetch=FetchType.EAGER)
+//private List<CartItem> cartItems;
+
 public Cart(){
 	System.out.println("Cart object is created");
 }
@@ -43,10 +45,13 @@ public Customer getCustomer() {
 public void setCustomer(Customer customer) {
 	this.customer = customer;
 }
+/*
 public List<CartItem> getCartItems() {
 	return cartItems;
 }
 public void setCartItems(List<CartItem> cartItems) {
 	this.cartItems = cartItems;
 }
+*/
+
 }
