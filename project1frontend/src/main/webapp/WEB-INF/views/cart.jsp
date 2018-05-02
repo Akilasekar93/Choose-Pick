@@ -25,7 +25,7 @@ Clear Cart
 <!-- double grandTotal=0 -->
 <c:set var="grandTotal" value="0"></c:set>
 <tbody id="tbody">
-<c:forEach items="${cartItems }" var="cartItem">
+<c:forEach items="${cartitems}" var="cartItem">
 <tr>
 <td>${cartItem.product.productname }</td>
 <td>${cartItem.quantity }</td>

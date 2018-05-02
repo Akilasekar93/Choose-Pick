@@ -7,5 +7,6 @@ public interface CartItemService {
 	void saveOrUpdateCartItem(CartItem cartItem);
 	void removeCartItem(int cartItemId);
 	User getUser(String email);
+	void clearAllCartItems(String email);
 	//CustomerOrder createOrder(User user);
 }

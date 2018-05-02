@@ -1,6 +1,7 @@
 package com.project.controllers;
 
 import java.security.Principal;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.project.model.Cart;
 import com.project.model.CartItem;
@@ -63,7 +65,7 @@ public class CartItemController {
 			String email=principal.getName();
 			User user=cartItemService.getUser(email);
 			List<CartItem> cartItems=user.getCartItems();//list of cartitems/products
-			model.addAttribute("cartItems",cartItems);
+			model.addAttribute("cartitems",cartItems);
 			return "cart";
 		}
 		
@@ -75,15 +77,20 @@ public class CartItemController {
 			return "redirect:/cart/purchasedetails";
 		}
 		@RequestMapping(value="/cart/clearcart")
-	    public String clearCart(@AuthenticationPrincipal Principal principal){
-			
+	    public String clearCart(@AuthenticationPrincipal Principal principal)
+		{
+			cartItemService.clearAllCartItems(principal.getName());		//email	
 			return "redirect:/cart/purchasedetails";
 	    }
 		
 		@RequestMapping(value="/cart/checkout")
-		public String checkout(@AuthenticationPrincipal Principal principal,Model model){
-		
-			return "shippingaddress";
+		public ModelAndView checkout(@AuthenticationPrincipal Principal principal,Model model)
+		//checkout(@PathVariable int cartId,Model model){
+		{
+			ModelAndView modelAndView = new ModelAndView("checkout");
+			User user=cartItemService.getUser(principal.getName());
+			modelAndView.addObject("user", user);				
+			return modelAndView;
 		}
 		
 		
@@ -92,22 +99,19 @@ public class CartItemController {
 		public String createOrder(@AuthenticationPrincipal Principal principal ,
 				                  @ModelAttribute ShippingAddress shippingaddress,
 				                  Model model){
-			
-			
-			
 			return "orderdetails";
 		}
+		
 		 @RequestMapping(value="/cart/getcart")	
 		 public String getCart(@AuthenticationPrincipal Principal principal,Model model) {
 			 String username=principal.getName();
 			 User user=cartItemService.getUser(username);
-			 Customer customer=user.getCustomer();
-			 Cart cart=customer.getCart();
-			 model.addAttribute("cart", cart);
-			 
-			 
-			return "cart";
-		}
+			// Customer customer=user.getCustomer();
+		//	 Cart cart=customer.getCart();
+			 List<CartItem>  obj1=user.getCartItems();
+			 model.addAttribute("cartitems", obj1); 
+			 return "cart";
 		
-	}
+		}
+}
 

@@ -37,6 +37,18 @@ public class CartItemDaoImpl implements CartItemDao{
 			return user;
 		}
 
+		@Override
+		public void clearAllCartItems(String email)
+		{
+			Session session=sessionFactory.getCurrentSession();
+			User user =(User) session.get(User.class, email);
+			List<CartItem> cartItems=user.getCartItems();
+			for(CartItem cartItem:cartItems)
+			{
+				session.delete(cartItem);
+			}
+		}
+
 		//public CustomerOrder createOrder(User user) {
 		//	return null;
 		//}

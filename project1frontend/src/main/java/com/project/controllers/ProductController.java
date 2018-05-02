@@ -45,17 +45,13 @@ private ProductService productService;
 	}
 	@RequestMapping(value="/all/getproduct/{id}")  //id is pathvariable  id=1, id=2, id=3
 	//  all/getproduct/1  , all/getproduct/2 , all/getproduct/3...
-	public ModelAndView getProduct(@PathVariable int id){//id =1, 2, 3 
-		//Pass this id to Service -> Service has to pass the id to Dao -> select * from product where id=1
+	public ModelAndView getProduct(@PathVariable int id)
+	{
 		System.out.println("Product Id is " + id);
 		Product product=productService.getProduct(id);
 		System.out.println("Product is " + product );
 		return new ModelAndView("productdetails","product",product);
-		// 1st parameter productdetails - view name - jsp filename
-		//2nd parameter product  - model attribute - in jsp page to display the data
-		//3rd parameter product - model -data [1 1000.0 Product Description for toy car Toy Car 12]
-		//product = [1 1000.0 Product Description for toy car Toy Car 12]
-	}
+			}
 	
 	@RequestMapping(value="/admin/deleteproduct/{id}")
 	public String deleteProduct(@PathVariable int id,HttpServletRequest request) {

@@ -24,6 +24,12 @@ public class CartItemServiceImpl implements CartItemService{
 		return cartItemDao.getUser(email);
 	}
 
+	@Override
+	public void clearAllCartItems(String email)
+	{
+		cartItemDao.clearAllCartItems(email);
+	}
+
 }
 
 
