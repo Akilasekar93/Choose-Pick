@@ -92,15 +92,7 @@ public class CartItemController {
 			modelAndView.addObject("user", user);				
 			return modelAndView;
 		}
-		
-		
-		@RequestMapping(value="/cart/createorder")
-		//from shippingaddressform.jsp to createOrder method
-		public String createOrder(@AuthenticationPrincipal Principal principal ,
-				                  @ModelAttribute ShippingAddress shippingaddress,
-				                  Model model){
-			return "orderdetails";
-		}
+				
 		
 		 @RequestMapping(value="/cart/getcart")	
 		 public String getCart(@AuthenticationPrincipal Principal principal,Model model) {
